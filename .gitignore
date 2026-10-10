@@ -1,0 +1,10 @@
+# Файлы IntelliJ IDEA
+.idea/
+*.iml
+
+# Логи
+*.log
+
+# Системные файлы OS
+.DS_Store
+Thumbs.db
