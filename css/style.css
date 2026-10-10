@@ -1,0 +1,490 @@
+/* ============================================
+   AURUM — школа фортепиано и вокала
+   Основные стили
+   ============================================ */
+
+/* ---------- Переменные ---------- */
+:root{
+    --bg:#0f0e1a;
+    --bg-soft:#181627;
+    --bg-card:#1e1b30;
+    --gold:#d4af37;
+    --gold-soft:#e8c766;
+    --cream:#f4efe6;
+    --text:#e8e6ef;
+    --muted:#a8a3b8;
+    --accent:#7d5fff;
+    --border:rgba(212,175,55,.18);
+    --shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+/* ---------- Сброс ---------- */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.65;
+    overflow-x:hidden;
+}
+
+/* ---------- Типографика ---------- */
+h1,h2,h3,h4{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    line-height:1.15;
+    color:var(--cream);
+}
+h1{font-size:clamp(2.4rem,5vw,4.2rem);letter-spacing:-.5px}
+h2{font-size:clamp(2rem,3.6vw,3rem);margin-bottom:1rem}
+h3{font-size:1.6rem;margin-bottom:.6rem}
+p{color:var(--muted)}
+a{color:var(--gold);text-decoration:none;transition:.25s}
+a:hover{color:var(--gold-soft)}
+img{max-width:100%;display:block}
+
+/* ============================================
+   HEADER / NAV
+   ============================================ */
+header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(15,14,26,.85);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border);
+}
+.nav-wrap{
+    max-width:1240px;margin:0 auto;padding:1rem 2rem;
+    display:flex;align-items:center;justify-content:space-between;
+}
+.logo{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.7rem;font-weight:700;color:var(--gold);
+    letter-spacing:2px;cursor:pointer;
+    display:flex;align-items:center;gap:.6rem;
+    text-decoration:none;
+}
+.logo span{
+    font-size:.7rem;font-family:'Inter';letter-spacing:4px;
+    color:var(--muted);display:block;margin-top:-2px;
+}
+nav ul{
+    display:flex;list-style:none;gap:2rem;align-items:center;
+}
+nav a{
+    color:var(--text);font-size:.92rem;font-weight:500;
+    position:relative;padding:.3rem 0;cursor:pointer;
+    text-decoration:none;
+}
+nav a::after{
+    content:'';position:absolute;left:0;bottom:0;width:0;height:1px;
+    background:var(--gold);transition:.3s;
+}
+nav a:hover::after,
+nav a.active::after{width:100%}
+nav a.active{color:var(--gold)}
+
+.btn-cta{
+    background:linear-gradient(135deg,var(--gold),var(--gold-soft));
+    color:#1a1500 !important;
+    padding:.7rem 1.6rem;border-radius:40px;
+    font-weight:600;font-size:.88rem;letter-spacing:.5px;
+    border:none;cursor:pointer;transition:.3s;
+    font-family:'Inter',sans-serif;
+}
+.btn-cta:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 30px rgba(212,175,55,.35);
+    color:#1a1500 !important;
+}
+
+.burger{
+    display:none;background:none;border:none;cursor:pointer;
+    flex-direction:column;gap:5px;
+}
+.burger span{width:26px;height:2px;background:var(--gold);transition:.3s}
+
+/* ============================================
+   LAYOUT
+   ============================================ */
+.container{max-width:1240px;margin:0 auto;padding:0 2rem}
+
+.page{padding-top:120px;min-height:100vh}
+
+.page-hero{
+    padding:3rem 0 2rem;text-align:center;
+    border-bottom:1px solid var(--border);margin-bottom:3.5rem;
+}
+.page-hero .eyebrow{
+    color:var(--gold);letter-spacing:5px;font-size:.75rem;
+    text-transform:uppercase;margin-bottom:1rem;font-weight:600;
+}
+.page-hero p{max-width:640px;margin:1rem auto 0}
+
+.section{padding:4.5rem 0}
+.section-head{
+    text-align:center;max-width:680px;margin:0 auto 3.5rem;
+}
+.section-head .eyebrow{
+    color:var(--gold);letter-spacing:5px;font-size:.75rem;
+    text-transform:uppercase;margin-bottom:1rem;font-weight:600;
+}
+
+/* ============================================
+   HERO (главная)
+   ============================================ */
+.hero{
+    display:grid;grid-template-columns:1.15fr 1fr;gap:4rem;
+    align-items:center;padding:3rem 0 5rem;
+}
+.hero-text .eyebrow{
+    color:var(--gold);letter-spacing:5px;font-size:.75rem;
+    text-transform:uppercase;margin-bottom:1.2rem;font-weight:600;
+}
+.hero-text h1{margin-bottom:1.5rem}
+.hero-text h1 em{font-style:italic;color:var(--gold);font-weight:500}
+.hero-text p{font-size:1.08rem;max-width:520px;margin-bottom:2.4rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+
+.hero-visual{
+    position:relative;height:520px;border-radius:24px;overflow:hidden;
+    background:
+            radial-gradient(circle at 30% 20%,rgba(125,95,255,.35),transparent 60%),
+            radial-gradient(circle at 70% 80%,rgba(212,175,55,.25),transparent 55%),
+            linear-gradient(160deg,#211d38,#0f0e1a);
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+}
+.hero-visual::before{
+    content:'♪';position:absolute;font-size:22rem;
+    color:rgba(212,175,55,.06);
+    top:50%;left:50%;transform:translate(-50%,-50%);
+    font-family:'Cormorant Garamond',serif;
+}
+.hero-keys{
+    position:absolute;bottom:0;left:0;right:0;height:120px;
+    display:flex;gap:2px;padding:0 8px 8px;
+}
+.key{
+    flex:1;background:linear-gradient(180deg,#f4efe6,#c9c2b5);
+    border-radius:0 0 6px 6px;position:relative;
+}
+.key::after{
+    content:'';position:absolute;top:0;right:-1px;width:2px;
+    height:65%;background:#2a2740;
+}
+.key:last-child::after{display:none}
+.key.black{
+    position:absolute;top:0;left:50%;transform:translateX(-50%);
+    width:60%;height:60%;background:#1a1830;
+    border-radius:0 0 4px 4px;z-index:2;
+}
+
+/* ============================================
+   КНОПКИ
+   ============================================ */
+.btn-primary{
+    background:linear-gradient(135deg,var(--gold),var(--gold-soft));
+    color:#1a1500;padding:1rem 2.2rem;border-radius:40px;
+    font-weight:600;border:none;cursor:pointer;
+    font-size:.95rem;letter-spacing:.4px;transition:.3s;
+    font-family:'Inter',sans-serif;
+}
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 16px 40px rgba(212,175,55,.4);
+}
+.btn-ghost{
+    background:transparent;color:var(--cream);
+    border:1px solid var(--border);
+    padding:1rem 2.2rem;border-radius:40px;
+    font-weight:500;cursor:pointer;font-size:.95rem;
+    transition:.3s;font-family:'Inter',sans-serif;
+}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ============================================
+   СЕТКИ И КАРТОЧКИ
+   ============================================ */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.8rem}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+
+.card{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:18px;padding:2.2rem;
+    transition:.35s;
+}
+.card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(212,175,55,.5);
+    box-shadow:var(--shadow);
+}
+.card .num{
+    font-family:'Cormorant Garamond',serif;
+    font-size:2.6rem;color:var(--gold);
+    opacity:.7;line-height:1;margin-bottom:.8rem;
+}
+.card h3{color:var(--cream)}
+.card p{font-size:.94rem}
+
+/* Карточки направлений */
+.dir-card{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:22px;overflow:hidden;
+    transition:.35s;cursor:pointer;
+    text-decoration:none;display:block;
+}
+.dir-card:hover{
+    transform:translateY(-8px);
+    border-color:var(--gold);
+    box-shadow:var(--shadow);
+}
+.dir-top{
+    height:190px;position:relative;
+    display:flex;align-items:center;justify-content:center;
+    font-size:5rem;font-family:'Cormorant Garamond',serif;
+    color:rgba(212,175,55,.55);
+}
+.dir-piano{background:linear-gradient(135deg,#2a1f4d,#1a142e)}
+.dir-vocal{background:linear-gradient(135deg,#3a2440,#1a142e)}
+.dir-body{padding:2rem}
+.dir-body h3{color:var(--cream)}
+.dir-body p{margin-bottom:1.2rem}
+.dir-link{
+    font-weight:600;font-size:.9rem;
+    letter-spacing:.4px;color:var(--gold);
+}
+
+/* Преподаватели */
+.teacher{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:18px;padding:2rem;
+    text-align:center;transition:.35s;
+}
+.teacher:hover{transform:translateY(-6px);border-color:var(--gold)}
+.avatar{
+    width:110px;height:110px;border-radius:50%;
+    margin:0 auto 1.2rem;
+    background:linear-gradient(135deg,var(--accent),var(--gold));
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Cormorant Garamond',serif;
+    font-size:2.6rem;color:#1a1500;font-weight:700;
+}
+.teacher .role{
+    color:var(--gold);font-size:.82rem;letter-spacing:2px;
+    text-transform:uppercase;margin-bottom:.8rem;
+}
+.teacher h3{color:var(--cream)}
+.teacher p{font-size:.9rem}
+
+/* Блог */
+.post{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:18px;overflow:hidden;
+    transition:.35s;cursor:pointer;
+}
+.post:hover{transform:translateY(-6px);border-color:var(--gold)}
+.post-img{
+    height:160px;
+    background:linear-gradient(135deg,#2a1f4d,#3a2440);
+    display:flex;align-items:center;justify-content:center;
+    font-size:3rem;color:rgba(212,175,55,.5);
+}
+.post-body{padding:1.6rem}
+.post-meta{
+    font-size:.78rem;color:var(--muted);
+    letter-spacing:1px;text-transform:uppercase;margin-bottom:.6rem;
+}
+.post h3{font-size:1.25rem;margin-bottom:.6rem;color:var(--cream)}
+.post p{font-size:.9rem}
+
+/* Списки-«таблицы» внутри карточек */
+.price-list{list-style:none;margin-top:1rem}
+.price-list li{
+    padding:.9rem 0;border-bottom:1px solid var(--border);
+    display:flex;justify-content:space-between;gap:1rem;
+    color:var(--muted);
+}
+.price-list li:last-child{border-bottom:none}
+.price-list li strong{color:var(--gold);font-weight:600;white-space:nowrap}
+
+.bullet-list{list-style:none;color:var(--muted);margin-top:1rem}
+.bullet-list li{padding:.5rem 0}
+
+/* ============================================
+   ФОРМА ЗАПИСИ
+   ============================================ */
+.form-wrap{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:22px;padding:3rem;
+    max-width:760px;margin:0 auto;
+    box-shadow:var(--shadow);
+}
+.form-row{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:1.2rem;margin-bottom:1.2rem;
+}
+.form-group{margin-bottom:1.2rem}
+label{
+    display:block;font-size:.82rem;color:var(--muted);
+    letter-spacing:1px;text-transform:uppercase;margin-bottom:.5rem;
+}
+input,select,textarea{
+    width:100%;padding:.95rem 1.1rem;
+    background:var(--bg-soft);
+    border:1px solid var(--border);border-radius:12px;
+    color:var(--text);font-family:'Inter',sans-serif;
+    font-size:.95rem;transition:.25s;
+}
+input:focus,select:focus,textarea:focus{
+    outline:none;border-color:var(--gold);background:#211d38;
+}
+textarea{resize:vertical;min-height:100px}
+
+.radio-group{display:flex;gap:1rem;flex-wrap:wrap}
+.radio-group label{
+    flex:1;min-width:140px;padding:1rem;
+    border:1px solid var(--border);border-radius:12px;
+    cursor:pointer;text-align:center;
+    text-transform:none;letter-spacing:0;
+    font-size:.9rem;color:var(--text);
+    transition:.25s;background:var(--bg-soft);
+    margin:0;position:relative;
+}
+.radio-group input{display:none}
+.radio-group input:checked + span{color:var(--gold)}
+.radio-group label:has(input:checked){
+    border-color:var(--gold);
+    background:rgba(212,175,55,.08);
+}
+
+.form-success{
+    display:none;
+    background:rgba(212,175,55,.1);
+    border:1px solid var(--gold);
+    border-radius:14px;padding:1.5rem;
+    text-align:center;color:var(--gold-soft);
+    margin-bottom:1.5rem;
+}
+.form-note{font-size:.82rem;text-align:center;margin-top:1rem}
+
+/* ============================================
+   КОНТАКТЫ
+   ============================================ */
+.contact-grid{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:3rem;align-items:start;
+}
+.contact-item{display:flex;gap:1.2rem;margin-bottom:2rem}
+.contact-icon{
+    width:52px;height:52px;flex-shrink:0;
+    border-radius:14px;
+    background:rgba(212,175,55,.1);
+    border:1px solid var(--border);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.4rem;
+}
+.contact-item h4{
+    font-family:'Inter';font-size:.95rem;color:var(--muted);
+    text-transform:uppercase;letter-spacing:1px;
+    font-weight:500;margin-bottom:.3rem;
+}
+.contact-item p{color:var(--cream);font-size:1.05rem}
+
+.map{
+    height:380px;border-radius:22px;
+    border:1px solid var(--border);
+    background:linear-gradient(135deg,#1e1b30,#2a1f4d);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--muted);font-size:.9rem;
+    text-align:center;padding:2rem;
+    position:relative;overflow:hidden;
+}
+.map::before{
+    content:'📍';font-size:4rem;position:absolute;
+    color:var(--gold);opacity:.4;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer{
+    background:var(--bg-soft);
+    border-top:1px solid var(--border);
+    padding:4rem 0 2rem;margin-top:5rem;
+}
+.footer-grid{
+    display:grid;grid-template-columns:2fr 1fr 1fr;
+    gap:3rem;margin-bottom:3rem;
+}
+.footer-col h4{
+    font-family:'Inter';font-size:.85rem;color:var(--cream);
+    text-transform:uppercase;letter-spacing:2px;
+    margin-bottom:1.2rem;
+}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:.6rem}
+.footer-col a{
+    color:var(--muted);font-size:.92rem;
+    cursor:pointer;text-decoration:none;
+}
+.footer-col a:hover{color:var(--gold)}
+.footer-col p{font-size:.9rem}
+
+.counters{
+    display:flex;gap:2rem;flex-wrap:wrap;align-items:center;
+    padding:2rem 0;border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);margin-bottom:2rem;
+}
+.counters-title{
+    font-size:.78rem;color:var(--muted);
+    letter-spacing:2px;text-transform:uppercase;
+}
+.counter-slot{
+    min-width:88px;height:31px;
+    border:1px dashed var(--border);border-radius:6px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:.7rem;color:var(--muted);letter-spacing:1px;
+    padding:0 .8rem;font-family:'Inter';text-transform:uppercase;
+}
+
+.copyright{text-align:center;font-size:.82rem;color:var(--muted)}
+
+/* ============================================
+   АДАПТИВ
+   ============================================ */
+@media(max-width:1000px){
+    .grid-4{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:900px){
+    .hero{grid-template-columns:1fr;gap:2.5rem;padding:1rem 0 3rem}
+    .hero-visual{height:340px}
+    .grid-3{grid-template-columns:1fr}
+    .grid-4{grid-template-columns:1fr}
+    .grid-2{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr}
+    .footer-grid{grid-template-columns:1fr;gap:2rem}
+    .form-wrap{padding:1.8rem}
+    .form-row{grid-template-columns:1fr}
+
+    nav ul{
+        display:none;position:absolute;
+        top:100%;left:0;right:0;
+        background:var(--bg-soft);
+        flex-direction:column;padding:1.5rem 2rem;
+        gap:1rem;border-bottom:1px solid var(--border);
+        align-items:stretch;
+    }
+    nav ul.open{display:flex}
+    .burger{display:flex}
+    .nav-wrap{padding:1rem 1.2rem}
+    .container{padding:0 1.2rem}
+    .page{padding-top:96px}
+}

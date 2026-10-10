@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты — Aurum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="nav-wrap">
+        <a class="logo" href="index.html"><div>AURUM<span>PIANO · VOCAL</span></div></a>
+        <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+        <nav>
+            <ul id="navMenu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О школе</a></li>
+                <li><a href="piano.html">Фортепиано</a></li>
+                <li><a href="vocal.html">Вокал</a></li>
+                <li><a href="blog.html">Блог</a></li>
+                <li><a href="contacts.html" class="active">Контакты</a></li>
+                <li><a href="booking.html" class="btn-cta">Записаться</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="page">
+    <div class="container">
+
+        <div class="page-hero">
+            <div class="eyebrow">Контакты</div>
+            <h1>Свяжитесь с нами</h1>
+            <p>Ответим на вопросы, подберём педагога и расскажем, как добраться до студии.</p>
+        </div>
+
+        <div class="contact-grid" data-block="contacts">
+            <div data-block="contacts-info">
+                <div class="contact-item" data-block="contact-address">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h4>Адрес студии</h4>
+                        <p>г. Москва, ул. Примерная, 12<br>3 этаж, офис 305</p>
+                    </div>
+                </div>
+                <div class="contact-item" data-block="contact-phone">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <h4>Телефон</h4>
+                        <p><a href="tel:+74951234567" style="color:var(--cream)">+7 (495) 123-45-67</a></p>
+                    </div>
+                </div>
+                <div class="contact-item" data-block="contact-email">
+                    <div class="contact-icon">✉️</div>
+                    <div>
+                        <h4>Email</h4>
+                        <p><a href="mailto:hello@aurum-school.ru" style="color:var(--cream)">hello@aurum-school.ru</a></p>
+                    </div>
+                </div>
+                <div class="contact-item" data-block="contact-hours">
+                    <div class="contact-icon">🕐</div>
+                    <div>
+                        <h4>Часы работы</h4>
+                        <p>Пн–Пт: 10:00–21:00<br>Сб–Вс: 10:00–19:00</p>
+                    </div>
+                </div>
+                <a href="booking.html" class="btn-primary" data-block="contacts-cta" style="display:inline-block">Записаться на урок</a>
+            </div>
+            <div class="map" data-block="contacts-map">
+                Здесь будет карта студии<br>(Яндекс.Карты)
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a class="logo" href="index.html" style="margin-bottom:1.2rem"><div>AURUM<span>PIANO · VOCAL</span></div></a>
+                <p>Школа фортепиано и вокала. Офлайн в центре Москвы и онлайн из любой точки мира.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Разделы</h4>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О школе</a></li>
+                    <li><a href="piano.html">Фортепиано</a></li>
+                    <li><a href="vocal.html">Вокал</a></li>
+                    <li><a href="blog.html">Блог</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <ul>
+                    <li><a href="contacts.html">Адрес и карта</a></li>
+                    <li><a href="booking.html">Запись на урок</a></li>
+                    <li><a href="tel:+74951234567">+7 (495) 123-45-67</a></li>
+                    <li><a href="mailto:hello@aurum-school.ru">hello@aurum-school.ru</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="counters">
+            <span class="counters-title">Счётчики:</span>
+            <div class="counter-slot" id="li-counter">LiveInternet</div>
+            <div class="counter-slot" id="rambler-counter">Rambler / Top100</div>
+            <div class="counter-slot" id="mailru-counter">Рейтинг Mail.ru</div>
+        </div>
+        <div class="copyright">© 2026 Aurum — школа фортепиано и вокала. Все права защищены.</div>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
